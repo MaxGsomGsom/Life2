@@ -98,6 +98,12 @@ namespace Life_2
             NoLetters(textBox1_blue);
         }
 
+        private void checkBox1_lines_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1_lines.Checked) game_form.blackLines = true;
+            else game_form.blackLines = false;
+        }
+
         
     }
 }
