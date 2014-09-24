@@ -47,6 +47,7 @@
             this.radioButton2_2 = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.checkBox1_lines = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,7 +71,7 @@
             // 
             // button1_start
             // 
-            this.button1_start.Location = new System.Drawing.Point(45, 358);
+            this.button1_start.Location = new System.Drawing.Point(45, 436);
             this.button1_start.Name = "button1_start";
             this.button1_start.Size = new System.Drawing.Size(100, 23);
             this.button1_start.TabIndex = 2;
@@ -80,7 +81,7 @@
             // 
             // button1_pause
             // 
-            this.button1_pause.Location = new System.Drawing.Point(186, 358);
+            this.button1_pause.Location = new System.Drawing.Point(186, 436);
             this.button1_pause.Name = "button1_pause";
             this.button1_pause.Size = new System.Drawing.Size(100, 23);
             this.button1_pause.TabIndex = 3;
@@ -165,7 +166,7 @@
             // 
             // button1_help
             // 
-            this.button1_help.Location = new System.Drawing.Point(119, 409);
+            this.button1_help.Location = new System.Drawing.Point(119, 487);
             this.button1_help.Name = "button1_help";
             this.button1_help.Size = new System.Drawing.Size(100, 23);
             this.button1_help.TabIndex = 12;
@@ -230,11 +231,23 @@
             this.label7.TabIndex = 18;
             this.label7.Text = "Type of game:";
             // 
+            // checkBox1_lines
+            // 
+            this.checkBox1_lines.AutoSize = true;
+            this.checkBox1_lines.Location = new System.Drawing.Point(48, 367);
+            this.checkBox1_lines.Name = "checkBox1_lines";
+            this.checkBox1_lines.Size = new System.Drawing.Size(97, 21);
+            this.checkBox1_lines.TabIndex = 19;
+            this.checkBox1_lines.Text = "Black lines";
+            this.checkBox1_lines.UseVisualStyleBackColor = true;
+            this.checkBox1_lines.CheckedChanged += new System.EventHandler(this.checkBox1_lines_CheckedChanged);
+            // 
             // Setting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(338, 455);
+            this.ClientSize = new System.Drawing.Size(338, 545);
+            this.Controls.Add(this.checkBox1_lines);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.radioButton1_1);
             this.Controls.Add(this.label6);
@@ -287,6 +300,7 @@
         private System.Windows.Forms.Label label7;
         public System.Windows.Forms.RadioButton radioButton1_1;
         public System.Windows.Forms.RadioButton radioButton2_2;
+        private System.Windows.Forms.CheckBox checkBox1_lines;
 
     }
 }

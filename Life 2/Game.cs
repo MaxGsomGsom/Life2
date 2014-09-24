@@ -20,6 +20,7 @@ namespace Life_2
         int[,,] field_blue;
         int[,,] next_field_blue;
 
+        public bool blackLines = false;
         int stepShow = 0;
         int blueNumShow = 0;
         int greenNumShow = 0;
@@ -44,7 +45,7 @@ namespace Life_2
             t = new Timer();
             t.Tick += Step;
             t.Interval = 500;
-
+            
 
         }
 
@@ -131,6 +132,13 @@ namespace Life_2
 
             BufferedGraphicsContext context = new BufferedGraphicsContext();
             gBuf = context.Allocate(g, new Rectangle(0, 0, pictureBox1_main.Width, pictureBox1_main.Height));
+
+            g.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighSpeed;
+            g.PixelOffsetMode = System.Drawing.Drawing2D.PixelOffsetMode.HighSpeed;
+            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighSpeed;
+            gBuf.Graphics.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighSpeed;
+            gBuf.Graphics.PixelOffsetMode = System.Drawing.Drawing2D.PixelOffsetMode.HighSpeed;
+            gBuf.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighSpeed;
 
             StepDraw();
 
@@ -304,10 +312,10 @@ namespace Life_2
 
                 if (d == 1) 
                 {
-                    if (now) g.FillPolygon(Brushes.LightGreen, p);
-                    else gBuf.Graphics.FillPolygon(Brushes.LightGreen, p);
+                    if (now) g.FillPolygon(Brushes.LawnGreen, p);
+                    else gBuf.Graphics.FillPolygon(Brushes.LawnGreen, p);
                 }
-                else if (d == 0) gBuf.Graphics.DrawPolygon(Pens.Black, p);
+                else if (d == 0 && blackLines) gBuf.Graphics.DrawPolygon(Pens.Black, p);
                 else if (d == 2)
                 {
                     if (now) g.FillPolygon(Brushes.Blue, p);
